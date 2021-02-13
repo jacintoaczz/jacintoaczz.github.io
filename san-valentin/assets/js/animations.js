@@ -62,7 +62,7 @@ imagesTimeline.from(".cards-area img", {
   stagger: 1,
 });
 
-// Another timeline
+// Another timeline for teh ".actually" section
 let actuallyTimeline = gsap.timeline({
   scrollTrigger: {
     trigger: ".actually",
@@ -89,6 +89,31 @@ actuallyTimeline
     duration: 1,
     y: -50,
     stagger: 0.6,
+  });
+
+// Animation for the text in the footer
+let footerTextTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".footer .title-wrapper",
+    toggleActions: "restart pause resume pause",
+  },
+});
+
+footerTextTimeline
+  .from(".footer .space .title-wrapper h2", {
+    x: "-101%",
+    duration: 1,
+    ease: "elastic(1, 1.3)",
+  })
+  .from(".footer .text p", { x: "-101%", duration: 1, stagger: 0.6 })
+  .from(".footer .text .footer-img", {
+    x: "-101%",
+    ease: "elastic(1, 0.6)",
+    duration: 1,
+  })
+  .from(".footer .i-love-you", {
+    opacity: 0,
+    duration: 1.5,
   });
 
 /* 
