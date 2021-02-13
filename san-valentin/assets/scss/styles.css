@@ -1,0 +1,662 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --text-color: #fff;
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  background-image: linear-gradient(
+    to top,
+    #ff9a9e 0%,
+    #fecfef 99%,
+    #fecfef 100%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.alternate-font {
+  font-family: "Lobster", sans-serif;
+}
+
+/* -------------- Preloader Stylings ------------------ */
+.preloader {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #242424;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: opacity 0.5s ease;
+  overflow: hidden;
+}
+
+.preload-finish {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.panel {
+  position: relative;
+  box-sizing: border-box;
+}
+/* -------------- Navbar Stylings ------------------ */
+.navbar {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.nav-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand span {
+  font-family: "Lobster", sans-serif;
+}
+
+.nav-brand img {
+  margin: 0px 5px;
+  height: 30px;
+  width: 30px;
+}
+
+.nav-items {
+  position: relative;
+  display: flex;
+  list-style: none;
+}
+
+.nav-links {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #b12828;
+
+  transition: 0.3s ease-in;
+}
+
+.nav-links:hover {
+  color: #ff9a9e;
+}
+
+/* ---- Styling for the sticky behavior of the navbar ----*/
+header.sticky {
+  padding: 10px 100px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* -------------- Container Stylings ------------------ */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 60px;
+}
+
+/* -------------- First section Stylings ------------------ */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.main-section .image-area {
+  position: absolute;
+  left: 0;
+  top: 20px;
+}
+
+.main-section .image-area .main-image {
+  height: 350px;
+  width: 800px;
+}
+
+.main-section .content-area {
+  width: 85%;
+  position: relative;
+  margin-top: 23em;
+}
+
+.main-section .content-area h1 {
+  color: #b12828;
+  font-size: 1.9rem;
+  font-family: "Lobster";
+  font-style: italic;
+}
+
+.main-section .content-area h1 > span {
+  font-family: "Lobster", sans-serif;
+  font-weight: bold;
+  font-size: 2.1rem;
+}
+
+.main-section .content-area hr {
+  width: 65%;
+  border-top: 1px solid black;
+  margin-bottom: 10px;
+}
+
+/* Scroll down button stylings ------------------ */
+.scroll-down {
+  margin-top: 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mouse {
+  width: 1.5rem;
+  height: 2.5rem;
+  border: 2px solid white;
+  border-radius: 1rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+}
+
+.mouse span {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+
+  /* animation: move-wheel 1s linear infinite; */
+}
+
+.arrow span {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 2px solid transparent;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  transform: rotate(45deg);
+}
+/* -------------- "Us" section Stylings ------------------ */
+.us-section {
+  padding: 60px 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.us-section .content-area {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.us-section .content-area .message {
+  margin-right: 3rem;
+}
+
+.us-section .content-area .message .title {
+  margin-bottom: 1rem;
+}
+
+.us-section .content-area .message .title span {
+  font-family: "Lobster", sans-serif;
+  color: #b12828;
+}
+
+.us-section .content-area .image-area {
+  display: flex;
+  align-items: center;
+}
+
+.us-section .content-area .rotated-img {
+  height: 150px;
+  width: 150px;
+  transform: rotate(45deg);
+}
+
+.cards-area {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-area img {
+  border-radius: 5px;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}
+
+/* -------------- Cards Stylings -------------- */
+.card {
+  position: relative;
+  height: 250px;
+  background: #fff;
+  display: flex;
+  width: 35%;
+  margin: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card .imgBx {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5 5px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.5s ease-in-out;
+}
+
+.card .imgBx img {
+  max-width: 100px;
+  transition: 0.5s ease-in-out;
+}
+
+.card .content {
+  position: absolute;
+  right: 0;
+  width: calc(100% - 75px);
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover .imgBx {
+  height: 150px;
+  width: 150px;
+  left: -75px;
+  top: calc(50% - 75px);
+}
+
+.card:hover .imgBx img {
+  max-width: 75px;
+}
+
+.container .card .content h3 {
+  color: #ff0057;
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.container .card .content a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background: #0095ff;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* -------------- Actually section Stylings ------------------ */
+.actually {
+  padding: 60px 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.actually h2 {
+  margin: 1rem 0;
+}
+
+.actually h2 > span {
+  color: #b12828;
+}
+
+.actually .content-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.actually .sunset-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 170px;
+  height: 170px;
+}
+
+.actually .balloon-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100px;
+  height: 100px;
+}
+
+.actually .text-area {
+  width: 85%;
+}
+
+.actually .text-area p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+/* ------------------ Footer Stylings ----------------------- */
+#footer {
+  color: #1c3048;
+  padding: 60px 60px;
+  height: 100vh;
+  position: relative;
+
+  background: url("../img/footer.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#footer svg {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: visible;
+}
+
+#footer h2 {
+  margin-top: 10rem;
+}
+
+#footer h2 > span {
+  color: #dd0342;
+}
+
+#footer .text {
+  width: 50%;
+  z-index: 3;
+}
+
+#footer .text p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+#footer img {
+  width: 50px;
+  height: 50px;
+}
+
+#footer .i-love-you {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+#footer .footer-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------- Animations ------------------ */
+@keyframes move-wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.6rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0.6rem);
+  }
+}
+
+/* ---------------------------- 
+Media queries for responsiveness
+-------------------------------- */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    padding: 20px 20px;
+  }
+
+  header.sticky {
+    padding: 10px 20px;
+  }
+
+  .container {
+    padding: 0px 5px;
+  }
+
+  .main-section {
+    height: 100%;
+  }
+
+  .main-section .image-area {
+    top: 50px;
+  }
+  .main-section .image-area .main-image {
+    height: 300px;
+    width: 380px;
+  }
+
+  .main-section .content-area {
+    margin-top: 20em;
+  }
+
+  .us-section .content-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 0px 20px;
+  }
+
+  .us-section .content-area .image-area {
+    margin-top: 2rem;
+  }
+
+  .actually {
+    height: 100%;
+  }
+
+  .actually .content-area {
+    padding: 0 20px;
+  }
+
+  .actually .sunset-img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .actually .balloon-img {
+    left: auto;
+    right: 0;
+    height: 50px;
+    width: 50px;
+  }
+
+  #footer h2 {
+    margin-top: 10rem;
+  }
+
+  #footer .text {
+    width: 100%;
+    z-index: 3;
+  }
+
+  #footer .text p {
+    font-size: 1rem;
+  }
+
+  #footer svg {
+    display: none;
+  }
+
+  #footer .i-love-you {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .container {
+    padding: 0px 30px;
+  }
+
+  .main-section .image-area .main-image {
+    height: 350px;
+    width: 400px;
+  }
+
+  .actually {
+    height: 100%;
+  }
+
+  .actually .sunset-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .actually .balloon-img {
+    left: auto;
+    right: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  #footer .text {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 998px) {
+  .navbar {
+    padding: 40px 50px;
+  }
+
+  .nav-brand img {
+    height: 20px;
+    width: 20px;
+  }
+
+  header.sticky {
+    padding: 20px 10px;
+  }
+
+  .main-section .image-area .main-image {
+    height: 300px;
+    width: 500px;
+  }
+
+  .us-section {
+    height: 100%;
+    margin-bottom: 5rem;
+  }
+
+  .us-section .content-area .rotated-img {
+    height: 100px;
+    width: 100px;
+  }
+
+  #footer {
+    padding: 0px 40px;
+  }
+
+  #footer h2 {
+    margin-top: 8.5rem;
+  }
+
+  #footer .text p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 999px) {
+  .navbar {
+    padding: 40px 100px;
+  }
+
+  .nav-brand img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .container {
+    padding: 0px 40px;
+  }
+
+  .main-section .image-area .main-image {
+    height: 300px;
+    width: 650px;
+  }
+
+  .main-section .content-area {
+    width: 85%;
+    position: relative;
+    margin-top: 20em;
+  }
+
+  .us-section {
+    padding: 40px 0;
+    margin-bottom: 0rem;
+  }
+
+  .actually {
+    padding: 40px 0;
+  }
+
+  #footer h2 {
+    margin-top: 15rem;
+  }
+}

@@ -1,0 +1,306 @@
+button,
+button:active,
+button:focus {
+  outline: none;
+}
+
+.floating-collapse {
+  display: none;
+  z-index: 99;
+
+  img {
+    width: 100%;
+    max-width: 20px;
+  }
+
+  .activator {
+    width: 50px;
+    background: transparent;
+    max-height: 78px;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid #b12828;
+    cursor: pointer;
+    position: relative;
+
+    img {
+      &.menu {
+        opacity: 1;
+      }
+
+      &.x-menu {
+        opacity: 0;
+        transform: translateX(10px);
+        display: none;
+      }
+    }
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  background: #2a3048;
+  border-radius: 5em 0em 0em 5em;
+  padding: 0.4em;
+  clip-path: ellipse(0% 50% at 100% 50%);
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      display: flex;
+      align-items: center;
+      padding: 0.3rem;
+      margin: 0 0.4rem;
+      border-radius: 50%;
+
+      span {
+        color: #fff;
+        font-size: 1.5rem;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: color 0.3s;
+
+        &:hover {
+          color: #b12828;
+        }
+      }
+    }
+  }
+}
+
+/* Activator bars */
+/* Define the shape and color of the hamburger lines */
+#activator span {
+  display: block;
+  background-color: #ffffff;
+  height: 3px;
+  width: 25px;
+  margin-bottom: 5px;
+  position: relative;
+  opacity: 1;
+  transition: all 0.45s ease-out;
+  transform-origin: center left;
+}
+
+#activator span:nth-child(1) {
+  margin-top: 0.2em;
+}
+
+#activator:not(.collapsed) span:nth-child(1) {
+  transform: translate(15%, -33%) rotate(45deg);
+}
+
+#activator:not(.collapsed) span:nth-child(2) {
+  opacity: 0;
+}
+
+#activator:not(.collapsed) span:nth-child(3) {
+  transform: translate(15%, 33%) rotate(-45deg);
+}
+
+#activator span:nth-child(1) {
+  transform: translate(0%, 0%) rotate(0deg);
+}
+
+#activator span:nth-child(2) {
+  opacity: 1;
+}
+
+#activator span:nth-child(3) {
+  transform: translate(0%, 0%) rotate(0deg);
+}
+
+/* ---------------------------- 
+Media queries for responsiveness
+-------------------------------- */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .floating-collapse {
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  .us-section {
+    height: 100%;
+
+    .cards-area {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4rem;
+
+      img {
+        width: 300px;
+        height: 240px;
+      }
+
+      .rotated-img {
+        transform: rotate(-20deg);
+      }
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+  .floating-collapse {
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  .us-section {
+    height: 100%;
+
+    .cards-area {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4rem;
+
+      img {
+        width: 240px;
+        height: 210px;
+      }
+
+      .rotated-img {
+        transform: rotate(-10deg);
+      }
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .floating-collapse {
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  .actually {
+    padding: 0;
+    margin-bottom: 5rem;
+    height: 100vh;
+  }
+
+  .actually .text-area p {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .actually .balloon-img {
+    left: auto;
+    right: 0;
+    margin-right: 0px;
+  }
+
+  .actually .sunset-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 0px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  header.sticky {
+    padding: 10px 100px;
+  }
+
+  .main-section {
+    height: 100vh;
+    margin-bottom: 5rem;
+  }
+
+  .floating-collapse {
+    display: none;
+  }
+
+  .nav-items {
+    display: flex;
+  }
+
+  .us-section {
+    height: 100%;
+  }
+
+  .us-section .cards-area img {
+    width: 300px;
+    height: 250px;
+  }
+
+  .actually {
+    padding: 40px 0;
+  }
+
+  .actually .sunset-img {
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+  }
+
+  .actually .balloon-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  #footer {
+    height: 100%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .main-section .content-area {
+    font-size: 1.2rem;
+    margin-top: 18em;
+  }
+
+  .us-section .content-area .message {
+    font-size: 1.3rem;
+  }
+
+  .us-section .cards-area img {
+    width: 500px;
+    height: 300px;
+  }
+
+  .actually .text-area p {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  .actually .ballon-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .actually .sunset-img {
+    width: 150px;
+    height: 150px;
+  }
+}
