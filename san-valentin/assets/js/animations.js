@@ -52,7 +52,6 @@ let imagesTimeline = gsap.timeline({
     trigger: ".us-section .cards-area",
     toggleActions: "restart pause resume reset",
     start: "top center",
-    markers: true,
   },
 });
 
