@@ -408,21 +408,32 @@ header.sticky {
   overflow: visible;
 }
 
-#footer h2 {
+#footer .space {
   margin-top: 10rem;
 }
 
-#footer h2 > span {
+#footer .title-wrapper {
+  margin: 0 0 0 2px;
+  border-left: 3px solid #1c3048;
+  overflow: hidden;
+}
+
+#footer .title-wrapper h2 {
+  margin-left: 5px;
+}
+
+#footer .title-wrapper h2 > span {
   color: #dd0342;
 }
 
 #footer .text {
   width: 50%;
   z-index: 3;
+  overflow: hidden;
 }
 
 #footer .text p {
-  margin: 0.5rem 0;
+  margin: 0.5rem 0.1rem;
   font-size: 1.2rem;
   font-weight: 500;
   font-style: italic;
@@ -527,7 +538,7 @@ Media queries for responsiveness
     width: 50px;
   }
 
-  #footer h2 {
+  #footer .space {
     margin-top: 10rem;
   }
 
@@ -613,7 +624,7 @@ Media queries for responsiveness
     padding: 0px 40px;
   }
 
-  #footer h2 {
+  #footer .space {
     margin-top: 8.5rem;
   }
 
@@ -654,9 +665,5 @@ Media queries for responsiveness
 
   .actually {
     padding: 40px 0;
-  }
-
-  #footer h2 {
-    margin-top: 15rem;
   }
 }

@@ -292,6 +292,9 @@ Media queries for responsiveness
   #footer {
     height: 100%;
   }
+  #footer .space {
+    margin-top: 10rem;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
